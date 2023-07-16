@@ -1,41 +1,39 @@
 
+
 const message = 'The Tao gave birth to machine language.  Machine language gave birth to the assembler. The assembler gave birth to the compiler.  Now there are ten thousand languages. Each language has its purpose, however humble.  Each language expresses the Yin and Yang of software.  Each language has its place within the Tao. But do not program in COBOL if you can avoid it.  -- Geoffrey James, "The Tao of Programming"';
 
-const results = message.split(" ");
 
-
-const arrTwo = [];
-
-let foo
 
 const delElem = (arr) => arr.filter((el, i, a) => a.indexOf(el) !== i);
 
-results.forEach(result =>
+const noRepeatElem = (arr) => arr.filter((el, i, a) => a.indexOf(el) === i);
+
+const task = (message) =>
 {
-    const newArr = (result.split(''));
+const arrWords = message.split(" ");
 
-    const del = delElem(newArr);
+    const arrFirstUniqueLetters = [];
 
-    const uniq = newArr.filter((el, i, a) => a.indexOf(el) === i);
-
-    const boo = uniq.filter(item => !del.includes(item))
-   
-     arrTwo.push(boo[0])
-  
-    const delTwo = delElem(arrTwo)
-
-    const uniqTwo = arrTwo.filter((el, i, a) => a.indexOf(el) === i);
-
-    foo = uniqTwo.filter(item => !delTwo.includes(item))
+    let arrUniqueLettersMessage
 
 
+    arrWords.forEach(word =>
+{
+        const arrLetters = (word.split(''));
+
+        const arrUniqueLettersWord = noRepeatElem(arrLetters).filter(el => !delElem(arrLetters).includes(el));
+
+        arrFirstUniqueLetters.push(arrUniqueLettersWord[0])
+
+        arrUniqueLettersMessage = noRepeatElem(arrFirstUniqueLetters).filter(el => !delElem(arrFirstUniqueLetters).includes(el))
 
 })
-const finishArr=foo[0]
-console.log(finishArr)
+    const result = arrUniqueLettersMessage[0];
 
+console.log(result)
+}
 
-
+task(message);
 
 
 
