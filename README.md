@@ -21,7 +21,7 @@ But do not program in COBOL if you can avoid it.
 то повинна повернути вона символ "m".
 
 ## Вирішення 
-Вирішення программи знаходится за посиланням [TASK](marinamelnik1105.github.io/task/)
+Вирішення программи знаходится за посиланням [TASK](https://marinamelnik1105.github.io/task/)
 
 ## Компіляція
 
