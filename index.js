@@ -19,7 +19,7 @@ const arrWords = text.split(" ");
 
     const arrFirstUniqueLetters = [];
 
-    let arrUniqueLettersMessage;
+    let arrUniqueLettersText;
 
     arrWords.forEach(word =>
 {
@@ -29,10 +29,10 @@ const arrWords = text.split(" ");
 
         arrFirstUniqueLetters.push(arrUniqueLettersWord[0]);
 
-        arrUniqueLettersMessage = noRepeatElem(arrFirstUniqueLetters).filter(el => !delElem(arrFirstUniqueLetters).includes(el));
+        arrUniqueLettersText = noRepeatElem(arrFirstUniqueLetters).filter(el => !delElem(arrFirstUniqueLetters).includes(el));
 
 })
-    const resultLetter = arrUniqueLettersMessage[0];
+    const resultLetter = arrUniqueLettersText[0];
     result.textContent = `result: ${resultLetter}`;
 }
 
