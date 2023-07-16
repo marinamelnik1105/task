@@ -1,21 +1,25 @@
 
+const text = document.querySelector('[data-text]');
 
-const message = 'The Tao gave birth to machine language.  Machine language gave birth to the assembler. The assembler gave birth to the compiler.  Now there are ten thousand languages. Each language has its purpose, however humble.  Each language expresses the Yin and Yang of software.  Each language has its place within the Tao. But do not program in COBOL if you can avoid it.  -- Geoffrey James, "The Tao of Programming"';
+const button = document.querySelector('[data-submit]');
 
+const result = document.querySelector('[data-result]');
 
+const onSubmit = () =>task(text.value);
 
-const delElem = (arr) => arr.filter((el, i, a) => a.indexOf(el) !== i);
+button.addEventListener('click', onSubmit);
 
 const noRepeatElem = (arr) => arr.filter((el, i, a) => a.indexOf(el) === i);
 
-const task = (message) =>
+const delElem = (arr) => arr.filter((el, i, a) => a.indexOf(el) !== i);
+
+const task = (text) =>
 {
-const arrWords = message.split(" ");
+const arrWords = text.split(" ");
 
     const arrFirstUniqueLetters = [];
 
-    let arrUniqueLettersMessage
-
+    let arrUniqueLettersMessage;
 
     arrWords.forEach(word =>
 {
@@ -23,17 +27,16 @@ const arrWords = message.split(" ");
 
         const arrUniqueLettersWord = noRepeatElem(arrLetters).filter(el => !delElem(arrLetters).includes(el));
 
-        arrFirstUniqueLetters.push(arrUniqueLettersWord[0])
+        arrFirstUniqueLetters.push(arrUniqueLettersWord[0]);
 
-        arrUniqueLettersMessage = noRepeatElem(arrFirstUniqueLetters).filter(el => !delElem(arrFirstUniqueLetters).includes(el))
+        arrUniqueLettersMessage = noRepeatElem(arrFirstUniqueLetters).filter(el => !delElem(arrFirstUniqueLetters).includes(el));
 
 })
-    const result = arrUniqueLettersMessage[0];
-
-console.log(result)
+    const resultLetter = arrUniqueLettersMessage[0];
+    result.textContent = `result: ${resultLetter}`;
 }
 
-task(message);
+
 
 
 
